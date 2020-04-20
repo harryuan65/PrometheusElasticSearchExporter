@@ -16,7 +16,7 @@ services:
   grafana: # fixed to 3000
      image: grafana/grafana
      volumes:
-         - ./grafana_data:/var/lib/grafana
+         - ./grafana_data:/var/lib/grafana:rw
      environment:
        - GF_SECURITY_ADMIN_PASSWORD=pass
      depends_on:
