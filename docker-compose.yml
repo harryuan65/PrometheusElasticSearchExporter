@@ -7,7 +7,7 @@ services:
     volumes:
       - ".:/var/www/prometheus:rw"
     command: --config.file=/var/www/prometheus/prometheus.yml
-    link:
+    links:
       - node_exporter
       - alert_manager
   node_exporter:
