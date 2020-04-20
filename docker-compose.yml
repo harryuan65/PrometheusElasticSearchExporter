@@ -24,3 +24,5 @@ services:
      ports:
        - 3000:3000
      user: "472"
+     links:
+       - prometheus
