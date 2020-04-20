@@ -14,7 +14,7 @@ services:
     ports:
       - 9093:9093
   grafana: # fixed to 3000
-     image: grafana/grafana
+     image: grafana/grafana:6.7.2-ubuntu
      volumes:
          - ./grafana_data:/var/lib/grafana:rw
      environment:
