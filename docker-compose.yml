@@ -1,0 +1,17 @@
+version: '2'
+services:
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ".:/var/www/prometheus:rw"
+    command: --config.file=/var/www/prometheus/prometheus.yml
+  node_exporter:
+    ports:
+      - 9100:9100
+    image: prom/node-exporter-linux-amd64
+  alert_manager:
+    image: prom/alertmanager-linux-amd64
+    ports:
+      - 9093:9093
