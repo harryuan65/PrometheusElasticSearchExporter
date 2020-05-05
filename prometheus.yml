@@ -1,7 +1,7 @@
 # global config
 global:
-  scrape_interval:     5s
-  evaluation_interval: 5s
+  scrape_interval:     15s
+  evaluation_interval: 15s
 
 alerting:
   alertmanagers:
@@ -14,6 +14,7 @@ scrape_configs:
     static_configs:
     - targets: ['localhost:9090']
   - job_name: 'node_exporter'
+    scrape_interval: 5s
     static_configs:
       - targets: ['172.31.30.144:9100']
     # - targets: ['host.docker.internal:9100']
