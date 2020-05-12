@@ -1,0 +1,4 @@
+sudo docker run --rm --name exporter \
+    -v /Users/harry/Documents/prometheus/gn-prometheus-docker/exporter.cfg:/usr/src/app/exporter.cfg \
+    -p 9205:9206 \
+    braedon/prometheus-es-exporter:0.8.0 -e http://host.docker.internal:9200

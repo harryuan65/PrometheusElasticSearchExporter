@@ -20,3 +20,35 @@ services:
      user: "472"
      links:
        - prometheus
+  elasticsearch_exporter:
+    image: braedon/prometheus-es-exporter:0.8.0
+    command: -e http://host.docker.internal:9200
+    volumes:
+      - ./exporter.cfg:/usr/src/app/exporter.cfg
+    ports:
+      - 9205:9206
+    # links:
+    #   - elasticsearch
+#   elasticsearch:
+#     image: docker.elastic.co/elasticsearch/elasticsearch:5.1.1
+#     environment:
+#       - cluster.name=docker-cluster
+#       - bootstrap.memory_lock=true
+#       - xpack.security.enabled=false
+#       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+#     ulimits:
+#       memlock:
+#         soft: -1
+#         hard: -1
+#       nofile:
+#         soft: 65536
+#         hard: 65536
+#     mem_limit: 1g
+#     cap_add:
+#       - IPC_LOCK
+#     volumes:
+#       - esdata1:/usr/share/elasticsearch/data
+#     expose:
+#       - "9200"
+# volumes:
+#   esdata1: {}
