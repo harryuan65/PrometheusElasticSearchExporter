@@ -7,12 +7,6 @@ services:
     volumes:
       - ".:/var/www/prometheus:rw"
     command: --config.file=/var/www/prometheus/prometheus.yml
-    links:
-      - alert_manager
-  alert_manager:
-    image: prom/alertmanager-linux-amd64
-    ports:
-      - 9093:9093
   grafana: # fixed to 3000
      image: grafana/grafana:6.7.2-ubuntu
      volumes:
