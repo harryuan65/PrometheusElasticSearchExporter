@@ -18,5 +18,5 @@ scrape_configs:
     # - targets: ['host.docker.internal:8089']
   - job_name: 'dev'
     static_configs:
-    - targets: ['localhost:5678']
+    - targets: ['localhost:4567']
 
